@@ -3,7 +3,7 @@ const moment = require( "moment" );
 const Post = require( "./Post" );
 
 module.exports = {
-	createPost( { body, query }, res ) {
+	createPost( { body }, res ) {
 		new Post( Object.assign( {}, body, {
 			displayTime: moment().format( "h:mm A" )
 		} ) )
