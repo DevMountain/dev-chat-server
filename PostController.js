@@ -31,7 +31,7 @@ module.exports = {
 			next();
 		}
 	}
-	, errorMiddleware( { query }, _, next ) {
+	, errorMiddleware( { query }, res, next ) {
 		if ( query.error ) {
 			return res.status( 500 ).json( { error: "You requested an error be delivered!" } );
 		}

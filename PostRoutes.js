@@ -2,6 +2,6 @@ const { createPost, delayMiddleware, errorMiddleware, getPosts } = require( "./P
 
 module.exports = app => {
 	app.route( "/api/posts" )
-		.get( errorMiddleware, delayMiddleware, getPosts )
-		.post( errorMiddleware, delayMiddleware, createPost );
+		.get( delayMiddleware, errorMiddleware, getPosts )
+		.post( delayMiddleware, errorMiddleware, createPost );
 };
